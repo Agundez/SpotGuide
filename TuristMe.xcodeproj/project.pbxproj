@@ -13,6 +13,12 @@
 		74932DE621EDEC450030C8D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74932DE521EDEC450030C8D1 /* Assets.xcassets */; };
 		74932DE921EDEC450030C8D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74932DE721EDEC450030C8D1 /* LaunchScreen.storyboard */; };
 		74932DF321EEB74F0030C8D1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74932DF221EEB74F0030C8D1 /* MapViewController.swift */; };
+		74932DF521F1746D0030C8D1 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74932DF421F1746D0030C8D1 /* Spot.swift */; };
+		74932DF721F175AB0030C8D1 /* SpotList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74932DF621F175AB0030C8D1 /* SpotList.swift */; };
+		74932DF921F179540030C8D1 /* AddSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74932DF821F179540030C8D1 /* AddSpotViewController.swift */; };
+		74932DFB21F180360030C8D1 /* Adress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74932DFA21F180360030C8D1 /* Adress.swift */; };
+		74C7781B21F744DF004E3E3A /* SpotListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C7781A21F744DF004E3E3A /* SpotListTableViewController.swift */; };
+		74C7781D21F745FF004E3E3A /* SpotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C7781C21F745FF004E3E3A /* SpotTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		74932DE821EDEC450030C8D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74932DEA21EDEC450030C8D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74932DF221EEB74F0030C8D1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		74932DF421F1746D0030C8D1 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		74932DF621F175AB0030C8D1 /* SpotList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotList.swift; sourceTree = "<group>"; };
+		74932DF821F179540030C8D1 /* AddSpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpotViewController.swift; sourceTree = "<group>"; };
+		74932DFA21F180360030C8D1 /* Adress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adress.swift; sourceTree = "<group>"; };
+		74C7781A21F744DF004E3E3A /* SpotListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListTableViewController.swift; sourceTree = "<group>"; };
+		74C7781C21F745FF004E3E3A /* SpotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +75,12 @@
 				74932DE721EDEC450030C8D1 /* LaunchScreen.storyboard */,
 				74932DEA21EDEC450030C8D1 /* Info.plist */,
 				74932DF221EEB74F0030C8D1 /* MapViewController.swift */,
+				74932DF421F1746D0030C8D1 /* Spot.swift */,
+				74932DF621F175AB0030C8D1 /* SpotList.swift */,
+				74932DF821F179540030C8D1 /* AddSpotViewController.swift */,
+				74932DFA21F180360030C8D1 /* Adress.swift */,
+				74C7781A21F744DF004E3E3A /* SpotListTableViewController.swift */,
+				74C7781C21F745FF004E3E3A /* SpotTableViewCell.swift */,
 			);
 			path = TuristMe;
 			sourceTree = "<group>";
@@ -139,8 +157,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				74932DE121EDEC440030C8D1 /* ViewController.swift in Sources */,
+				74932DF721F175AB0030C8D1 /* SpotList.swift in Sources */,
+				74932DF921F179540030C8D1 /* AddSpotViewController.swift in Sources */,
+				74932DFB21F180360030C8D1 /* Adress.swift in Sources */,
 				74932DF321EEB74F0030C8D1 /* MapViewController.swift in Sources */,
 				74932DDF21EDEC440030C8D1 /* AppDelegate.swift in Sources */,
+				74C7781D21F745FF004E3E3A /* SpotTableViewCell.swift in Sources */,
+				74932DF521F1746D0030C8D1 /* Spot.swift in Sources */,
+				74C7781B21F744DF004E3E3A /* SpotListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9JR35ZUHGX;
 				INFOPLIST_FILE = TuristMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -304,6 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9JR35ZUHGX;
 				INFOPLIST_FILE = TuristMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

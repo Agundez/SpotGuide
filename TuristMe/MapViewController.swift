@@ -15,7 +15,7 @@ class MapViewController: UIViewController {
     let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
     let geocoder = CLGeocoder()
-    var adress = ""
+    var address = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,20 +62,19 @@ class MapViewController: UIViewController {
         let touchPoint = gestureRecognizer.location(in: mapView)
         let newCoords = mapView.convert(touchPoint, toCoordinateFrom: mapView)
         
-        let latitude = String(format: "%.6f", newCoords.longitude)
-        let longitude = String(format: "%.6f", newCoords.longitude)
+       // let latitude = String(format: "%.6f", newCoords.latitude)
+       // let longitude = String(format: "%.6f", newCoords.longitude)
         
         geocoderLocation(newLocation: CLLocation(latitude: newCoords.latitude, longitude: newCoords.longitude))
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = newCoords
-        annotation.title = adress
+        annotation.title = address
         
         mapView.addAnnotation(annotation)
         
+        print(address)
         
-        print(newCoords)
-        print(annotation)
     }
 
     func geocoderLocation(newLocation: CLLocation){
@@ -90,7 +89,8 @@ class MapViewController: UIViewController {
             if let placemark = placemarks?.last{
                 dir = self.stringFromPlacemark(placemark: placemark)
             }
-            self.adress = dir
+            self.address = dir
+           // print(dir)
         }
     }
     
@@ -108,8 +108,31 @@ class MapViewController: UIViewController {
         }
         return line
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addAddressSegue"{
+            let addSpotView = segue.destination as! AddSpotViewController
+            addSpotView.newAddress = address
+        }
+    }
+    
+    
+    @IBAction func addSpot(_ sender: Any) {
+ //   let addAdress = Spot(adressSpot: , comments: "", startDate: "", finishDate: "")
 
+     //  spotList.append(addAdress)
+
+       // var newAdress = Adress(newAdress: adress)
+       // print(newAdress)
+
+       //adress = Adress(newAdress: adress)
+     //   print(address)
+     //  dump(address)
+
+   }
+    
 }
+
 
 extension MapViewController : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -137,9 +160,7 @@ extension MapViewController : MKMapViewDelegate{
         if let annotationView = annotationView{
             annotationView.canShowCallout = true
             annotationView.image = UIImage(named: "maps-and-flags")
-            
         }
-        
         return annotationView
     }
     
