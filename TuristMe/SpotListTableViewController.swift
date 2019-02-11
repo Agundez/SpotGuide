@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Alamofire
 
 class SpotListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.rowHeight = 160
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -20,6 +22,9 @@ class SpotListTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        requestAlamofire()
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,11 +39,78 @@ class SpotListTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SpotList", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SpotList", for: indexPath) as? SpotTableViewCell else{
+            return SpotTableViewCell()
+        }
         
-        // Configure the cell...
+        cell.titleLBL.text = spotList[indexPath.row].addressSpot
+        
+        cell.commentaryLBL.text = spotList[indexPath.row].finishDate
 
         return cell
+    }
+    
+    func requestAlamofire()
+        
+    {
+        let action1 = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            
+            print("Alert OK")
+        }
+        
+        let uRL = "http:localhost:8888/turistmeCAT/public/api/place"
+        
+        let _headers : HTTPHeaders = ["Authorization": token, "Content-type":"application/json"]
+        
+        Alamofire.request(uRL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: _headers).responseJSON{
+            
+            response in
+            
+            switch response.result {
+                
+            case .success:
+                
+                
+                
+                let respuesta = "\(response)"
+                
+                print(respuesta)
+                
+                switch respuesta{
+                    
+                    
+                    
+                case "SUCCESS: 204":
+                    
+                    let alertController = UIAlertController(title: "No hay lugares", message: "Aún no has añadido ningún lugar.", preferredStyle: .alert)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                    break
+                    
+                default:
+                    
+                    let jsonPlaces = response.result.value
+                    
+                    let places = jsonPlaces as! [String:[[String:Any]]]
+                    
+                    spotList.removeAll()
+
+                    for place in places["places"]!{
+                        
+                        spotList.append(Spot.init(json: place))
+                        print(spotList.last?.comments)
+                    }
+                    self.tableView.reloadData()
+                }
+                
+            case .failure(let error):
+                
+                print("NO HE RECIBIDO RESPUESTA", error)
+                
+                break
+            }
+        }
     }
     
 

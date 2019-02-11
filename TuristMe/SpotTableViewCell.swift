@@ -7,18 +7,20 @@
 //
 
 import UIKit
+import Alamofire
 
 class SpotTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLBL: UILabel!
+    @IBOutlet weak var commentaryLBL: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }

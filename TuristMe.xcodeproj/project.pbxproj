@@ -19,9 +19,14 @@
 		74932DFB21F180360030C8D1 /* Adress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74932DFA21F180360030C8D1 /* Adress.swift */; };
 		74C7781B21F744DF004E3E3A /* SpotListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C7781A21F744DF004E3E3A /* SpotListTableViewController.swift */; };
 		74C7781D21F745FF004E3E3A /* SpotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C7781C21F745FF004E3E3A /* SpotTableViewCell.swift */; };
+		74F06A4021FEFA02003FAA9F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F06A3F21FEFA02003FAA9F /* RegisterViewController.swift */; };
+		74F06A4221FEFC7E003FAA9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F06A4121FEFC7E003FAA9F /* LoginViewController.swift */; };
+		74F06A4421FF1766003FAA9F /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F06A4321FF1766003FAA9F /* Token.swift */; };
+		80DD2994409E2BCB65223115 /* Pods_TuristMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F03860D19D61B415C09237A3 /* Pods_TuristMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		536AD7BD0B3ABE5E89162A30 /* Pods-TuristMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuristMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-TuristMe/Pods-TuristMe.release.xcconfig"; sourceTree = "<group>"; };
 		74932DDB21EDEC440030C8D1 /* TuristMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuristMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74932DDE21EDEC440030C8D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74932DE021EDEC440030C8D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +41,11 @@
 		74932DFA21F180360030C8D1 /* Adress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adress.swift; sourceTree = "<group>"; };
 		74C7781A21F744DF004E3E3A /* SpotListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListTableViewController.swift; sourceTree = "<group>"; };
 		74C7781C21F745FF004E3E3A /* SpotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTableViewCell.swift; sourceTree = "<group>"; };
+		74F06A3F21FEFA02003FAA9F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		74F06A4121FEFC7E003FAA9F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		74F06A4321FF1766003FAA9F /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		D718072B5DF41B3143FDBEAB /* Pods-TuristMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuristMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TuristMe/Pods-TuristMe.debug.xcconfig"; sourceTree = "<group>"; };
+		F03860D19D61B415C09237A3 /* Pods_TuristMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuristMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +53,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80DD2994409E2BCB65223115 /* Pods_TuristMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EFAF04B6229D98AFD6D63D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F03860D19D61B415C09237A3 /* Pods_TuristMe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BAF0BCF5A0CA7E1BA180E08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D718072B5DF41B3143FDBEAB /* Pods-TuristMe.debug.xcconfig */,
+				536AD7BD0B3ABE5E89162A30 /* Pods-TuristMe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		74932DD221EDEC440030C8D1 = {
 			isa = PBXGroup;
 			children = (
 				74932DDD21EDEC440030C8D1 /* TuristMe */,
 				74932DDC21EDEC440030C8D1 /* Products */,
+				4BAF0BCF5A0CA7E1BA180E08 /* Pods */,
+				3EFAF04B6229D98AFD6D63D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +111,9 @@
 				74932DFA21F180360030C8D1 /* Adress.swift */,
 				74C7781A21F744DF004E3E3A /* SpotListTableViewController.swift */,
 				74C7781C21F745FF004E3E3A /* SpotTableViewCell.swift */,
+				74F06A3F21FEFA02003FAA9F /* RegisterViewController.swift */,
+				74F06A4121FEFC7E003FAA9F /* LoginViewController.swift */,
+				74F06A4321FF1766003FAA9F /* Token.swift */,
 			);
 			path = TuristMe;
 			sourceTree = "<group>";
@@ -92,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74932DED21EDEC450030C8D1 /* Build configuration list for PBXNativeTarget "TuristMe" */;
 			buildPhases = (
+				663025BB7EE8CC184EF1B3E0 /* [CP] Check Pods Manifest.lock */,
 				74932DD721EDEC440030C8D1 /* Sources */,
 				74932DD821EDEC440030C8D1 /* Frameworks */,
 				74932DD921EDEC440030C8D1 /* Resources */,
+				A7BCE9F38A5C6233E67A37BA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,13 +186,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		663025BB7EE8CC184EF1B3E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TuristMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7BCE9F38A5C6233E67A37BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TuristMe/Pods-TuristMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TuristMe/Pods-TuristMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		74932DD721EDEC440030C8D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				74932DE121EDEC440030C8D1 /* ViewController.swift in Sources */,
+				74F06A4021FEFA02003FAA9F /* RegisterViewController.swift in Sources */,
 				74932DF721F175AB0030C8D1 /* SpotList.swift in Sources */,
+				74F06A4421FF1766003FAA9F /* Token.swift in Sources */,
 				74932DF921F179540030C8D1 /* AddSpotViewController.swift in Sources */,
 				74932DFB21F180360030C8D1 /* Adress.swift in Sources */,
 				74932DF321EEB74F0030C8D1 /* MapViewController.swift in Sources */,
@@ -165,6 +249,7 @@
 				74C7781D21F745FF004E3E3A /* SpotTableViewCell.swift in Sources */,
 				74932DF521F1746D0030C8D1 /* Spot.swift in Sources */,
 				74C7781B21F744DF004E3E3A /* SpotListTableViewController.swift in Sources */,
+				74F06A4221FEFC7E003FAA9F /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +393,7 @@
 		};
 		74932DEE21EDEC450030C8D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D718072B5DF41B3143FDBEAB /* Pods-TuristMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -326,6 +412,7 @@
 		};
 		74932DEF21EDEC450030C8D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 536AD7BD0B3ABE5E89162A30 /* Pods-TuristMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -16,9 +16,13 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     let geocoder = CLGeocoder()
     var address = ""
+    var coordX:Double = 0
+    var coordY:Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Add Spot"
         
         mapView.showsUserLocation = true
         locationManager.delegate = self
@@ -30,10 +34,12 @@ class MapViewController: UIViewController {
     }
     
 
+    //Iniciamos la localización del usuario
     @IBAction func locationUser() {
         initLocation()
     }
     
+    //Pedimos permisos para la localización del usuario, obtenemos su geolocalización y la posicionamos en el mapa
     func initLocation(){
         let permission = CLLocationManager.authorizationStatus()
         
@@ -51,6 +57,7 @@ class MapViewController: UIViewController {
         }
     }
     
+    //Creamos una alerta para que el usuario acepte los permisos de localización
     func alertLocation(tit: String, men: String){
         let alert = UIAlertController(title: tit, message: men, preferredStyle: .alert)
         let action = UIAlertAction(title: "Acept", style: .default, handler: nil)
@@ -58,12 +65,13 @@ class MapViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    
+    //A través del gestureRecognizer obtenemos la posición donde el usuario ha pulsado en el mapa, creamos un pin en esa posición y obtenemos las coordenadas
     @objc func action(gestureRecognizer: UIGestureRecognizer){
         let touchPoint = gestureRecognizer.location(in: mapView)
         let newCoords = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-        
-       // let latitude = String(format: "%.6f", newCoords.latitude)
-       // let longitude = String(format: "%.6f", newCoords.longitude)
+        self.coordY = newCoords.latitude
+        self.coordX = newCoords.longitude
         
         geocoderLocation(newLocation: CLLocation(latitude: newCoords.latitude, longitude: newCoords.longitude))
         
@@ -74,9 +82,9 @@ class MapViewController: UIViewController {
         mapView.addAnnotation(annotation)
         
         print(address)
-        
     }
 
+    //Borramos el pin anterior cuando pulse de nuevo en el mapa y obtenemos la dirección a través del sitio marcado(placemark)
     func geocoderLocation(newLocation: CLLocation){
         
         self.mapView.removeAnnotations(mapView.annotations)
@@ -94,6 +102,7 @@ class MapViewController: UIViewController {
         }
     }
     
+    //Pasamos a string el punto marcado en el placemark
     func stringFromPlacemark(placemark: CLPlacemark)->String{
         var line = ""
         
@@ -109,10 +118,14 @@ class MapViewController: UIViewController {
         return line
     }
     
+    
+    //Pasamos la información a la siguiente pantalla para mostrar la dirección seleccionada y añadir las coordenadas
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addAddressSegue"{
             let addSpotView = segue.destination as! AddSpotViewController
             addSpotView.newAddress = address
+            addSpotView.coordX = coordX
+            addSpotView.coordY = coordY
         }
     }
     
@@ -130,9 +143,7 @@ class MapViewController: UIViewController {
      //  dump(address)
 
    }
-    
 }
-
 
 extension MapViewController : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -163,7 +174,4 @@ extension MapViewController : MKMapViewDelegate{
         }
         return annotationView
     }
-    
-    
-    
 }
